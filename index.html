@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="normalize.css">
+  <link href="style.css" rel="stylesheet">
+  <script src="main.js" defer></script>
+  <title>Управление | Студенты</title>
+</head>
+
+<body>
+  <div class="container panel">
+    <h1 class="panel__title">Панель управления студентами</h1>
+    <div class="panel__forms">
+      <div class="panel__filter filter">
+        <h2 class="panel__subtitle">Поиск студента</h2>
+        <form class="filter__form panel__form" action="#">
+          <label class="filter__label">
+            <span class="filter__text">ФИО</span>
+            <input class="filter__fullname input filter-fullname-js" type="text" required>
+          </label>
+          <label class="filter__label">
+            <span class="filter__text">Факультет</span>
+            <input class="filter__faculty input filter-faculty-js" type="text" required>
+          </label>
+          <label class="filter__label">
+            <span class="filter__text">Год начала обучения</span>
+            <input class="filter__start-learn max input filter-start-learn-js" type="number" required>
+          </label>
+          <label class="filter__label">
+            <span class="filter__text">Год окончания обучения</span>
+            <input class="filter__finish-learn input filter-finish-learn-js" type="number" required>
+          </label>
+        </form>
+      </div>
+      <div class="panel__add-user add-user">
+        <h2 class="panel__subtitle">Добавить студента</h2>
+        <form class="add-user__form panel__form add-user-form-js" action="#">
+          <label class="add-user__label">
+            <span class="add-user__text">Имя</span>
+            <input class="add-user__name input add-user-name-js" data-validation="text" type="text" name="name" required>
+          </label>
+          <label class="add-user__label">
+            <span class="add-user__text">Фамилия</span>
+            <input class="add-user__surname input add-user-surname-js" data-validation="text" type="text" name="surname" required>
+          </label>
+          <label class="add-user__label">
+            <span class="add-user__text">Отчество</span>
+            <input class="add-user__middlename input add-user-middlename-js" data-validation="text" type="text" name="middlename" required>
+          </label>
+          <label class="add-user__label" data-name="birthday">
+            <span class="add-user__text">Дата рождения</span>
+            <input class="add-user__birthday max input add-user-birthday-js" type="date" name="birthday" min="1900-01-01" required>
+          </label>
+          <label class="add-user__label" data-name="start-learn">
+            <span class="add-user__text">Год начала обучения</span>
+            <input class="add-user__start-learn max input add-user-start-learn-js" type="number" required>
+          </label>
+          <label class="add-user__label">
+            <span class="add-user__text">Факультет</span>
+            <input class="add-user__faculty input add-user-faculty-js" data-validation="text" type="text" required>
+          </label>
+          <div class="add-user__error-msg">Заполните все поля!</div>
+          <button class="add-user__btn btn add-user-btn-js">Добавить</button>
+        </form>
+      </div>
+    </div>
+    <div class="panel__content">
+      <table class="panel__table table">
+        <caption class="table__caption">Список учащихся</caption>
+        <thead class="table__header table-header">
+          <tr>
+            <th class="table-header__name header--style table-header-name-js" data-sort="default">ФИО</th>
+            <th class="table-header__faculty header--style table-header-faculty-js" data-sort="default">Факультет</th>
+            <th class="table-header__birthday header--style table-header-birthday-js" data-sort="default">Дата рождения, возраст</th>
+            <th class="table-header__duration header--style table-header-duration-js" data-sort="default">Годы обучения, номер курса</th>
+          </tr>
+        </thead>
+        <tbody class="table__body table-body-js"></tbody>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>
